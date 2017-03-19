@@ -68,98 +68,182 @@
         <div class=row>
             <div class="col-md-6">
                 <ul class="nav nav-pills nav-justified">
-                    <li role="presentation" class="active"><a href="#">Editing Contests</a></li>
-                    <li role="presentation"><a href="#">Hour Challenges</a></li>
+                    <li role="presentation" class="active"><a data-toggle="pill" href="#contests">Editing Contests</a></li>
+                    <li role="presentation"><a data-toggle="pill" href="#challenges">Hour Challenges</a></li>
                 </ul>
             </div>
         </div>
 
         <!-- Contest Table -->
-        <div class="container">
-            <h2>
-                Editing Contests
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                Submit a Contest
-              </button>
-            </h2>
+        <div class="tab-content">
+            <div id="contests" class="tab-pane fade in active">
+                <h2>
+                    Editing Contests
+                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#contest-modal">
+                    Submit a Contest
+                  </button>
+                </h2>
 
-            <!-- Submission Modal -->
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
+                <!-- Submission Modal -->
+                <div id="contest-modal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
 
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Submit a Contest</h4>
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Submit a Contest</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                  <div class="form-group">
+                                    <label for="host-input" class="col-2 col-form-label">Name</label>
+                                    <input class="form-control" type="text" id="host-input">
+                                    <small class="form-text text-muted">Your channel name or nickname.</small>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="prize-input" class="col-2 col-form-label">Prize</label>
+                                    <input class="form-control" type="text" id="prize-input">
+                                    <small class="form-text text-muted">If your prize is non-monetary, please say so.</small>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="date-input" class="col-2 col-form-label">Deadline Date</label>
+                                    <input class="form-control" type="date" id="date-input">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="link-input" class="col-2 col-form-label">Contest Link</label>
+                                    <input class="form-control" type="text" id="link-input">
+                                  </div> 
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <small>All submissions are manually reviewed, but should be listed within 24 hours.</small>
+                                <button type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            <form>
-                              <div class="form-group">
-                                <label for="host-input" class="col-2 col-form-label">Name</label>
-                                <input class="form-control" type="text" id="host-input">
-                                <small class="form-text text-muted">Your channel name or nickname.</small>
-                              </div>
-                              <div class="form-group">
-                                <label for="prize-input" class="col-2 col-form-label">Prize</label>
-                                <input class="form-control" type="text" id="prize-input">
-                                <small class="form-text text-muted">If your prize is non-monetary, please say so.</small>
-                              </div>
-                              <div class="form-group">
-                                <label for="date-input" class="col-2 col-form-label">Deadline Date</label>
-                                <input class="form-control" type="date" id="date-input">
-                              </div>
-                              <div class="form-group">
-                                <label for="link-input" class="col-2 col-form-label">Contest Link</label>
-                                <input class="form-control" type="text" id="link-input">
-                              </div> 
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <small>All submissions are manually reviewed, but should be listed within 24 hours.</small>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </div>
+                </div>
+
+                <p>Below is a list of current active editing contests. Make sure you read the rules for each contest before entering.</p>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Host</th>
+                            <th>Prize Pool*</th>
+                            <th>Deadline</th>
+                            <th>Contest Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FaZe Owen</td>
+                            <td>$100</td>
+                            <td>March 31st 2017</td>
+                            <td><a href="https://www.youtube.com/watch?v=DH_YlOV5kdU">https://www.youtube.com/watch?v=DH_YlOV5kdU</a></td>
+                        </tr>
+                        <tr>
+                            <td>vivid</td>
+                            <td>$30</td>
+                            <td>April 1st 2017</td>
+                            <td><a href="https://www.youtube.com/watch?v=DI3dOCDB8lA">https://www.youtube.com/watch?v=DI3dOCDB8lA</a></td>
+                        </tr>
+                        <tr>
+                            <td>DRK Edits</td>
+                            <td>$0<sup>†</sup></td>
+                            <td>April 16th 2017</td>
+                            <td><a href="https://www.youtube.com/watch?v=s_43pdvLOfw">https://www.youtube.com/watch?v=s_43pdvLOfw</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            <p>* We do not guarantee the fulfilment of any prizes for contests listed here. </p>
+            <p><sup>†</sup> Contest includes prize, but it is not monetary.</p>
+                </div>
+            <div id="challenges" class="tab-pane fade">
+                    <h2>
+                        Hour Challenges
+                        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#challenge-modal">
+                        Submit a Challenge
+                      </button>
+                    </h2>
+
+                    <!-- Submission Modal -->
+                    <div id="challenge-modal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Submit a Challenge</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                      <div class="form-group">
+                                        <label for="host-input" class="col-2 col-form-label">Name</label>
+                                        <input class="form-control" type="text" id="host-input">
+                                        <small class="form-text text-muted">Your channel name or nickname.</small>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="prize-input" class="col-2 col-form-label">Prize</label>
+                                        <input class="form-control" type="text" id="prize-input">
+                                        <small class="form-text text-muted">If your prize is non-monetary, please say so.</small>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="datetime-input" class="col-2 col-form-label">Start Date and Time (UTC)</label>
+                                        <input class="form-control" type="datetime-local" id="datetime-input">
+                                        <small class="form-text text-muted">Please ensure you convert to the UTC standard to avoid confusion.</small>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="length-input" class="col-2 col-form-label">Length of HC in Hours</label>
+                                        <input class="form-control" type="time" id="length-input">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="link-input" class="col-2 col-form-label">Stream/Contact Link</label>
+                                        <input class="form-control" type="text" id="link-input">
+                                        <small class="form-text text-muted">Where participants will need to be when the HC begins</small>
+                                      </div> 
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <small>All submissions are manually reviewed, but should be listed within 24 hours.</small>
+                                    <button type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
+                    <p>Here are the upcoming HCs that have been submitted. Hour challenges are editing contests where you are provided
+                    with clips and a certain number of hours to edit them. Typically, the host will watch and judge the entries straight
+                    after the contest is over.</p>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Host</th>
+                                <th>Prize Pool*</th>
+                                <th>Date and Time (UTC)</th>
+                                <th>Length in Hours</th>
+                                <th>Stream/Contact Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>FaZe Mito</td>
+                                <td>$20</td>
+                                <td>March 20th 2017 21:00</td>
+                                <td>3 Hours</td>
+                                <td><a href="https://www.twitch.tv/mito">https://www.twitch.tv/mito</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+
+                <p>* We do not guarantee the fulfilment of any prizes for contests listed here. </p>
+                <p><sup>†</sup> Contest includes prize, but it is not monetary.</p>
                 </div>
-            </div>
-
-            <p>Below is a list of current active editing contests. Make sure you read the rules for each contest before entering.</p>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Host</th>
-                        <th>Prize Pool*</th>
-                        <th>Deadline</th>
-                        <th>Contest Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>FaZe Owen</td>
-                        <td>$100</td>
-                        <td>March 31st 2017</td>
-                        <td><a href="https://www.youtube.com/watch?v=DH_YlOV5kdU">https://www.youtube.com/watch?v=DH_YlOV5kdU</a></td>
-                    </tr>
-                    <tr>
-                        <td>vivid</td>
-                        <td>$30</td>
-                        <td>April 1st 2017</td>
-                        <td><a href="https://www.youtube.com/watch?v=DI3dOCDB8lA">https://www.youtube.com/watch?v=DI3dOCDB8lA</a></td>
-                    </tr>
-                    <tr>
-                        <td>DRK Edits</td>
-                        <td>$0<sup>†</sup></td>
-                        <td>April 16th 2017</td>
-                        <td><a href="https://www.youtube.com/watch?v=s_43pdvLOfw">https://www.youtube.com/watch?v=s_43pdvLOfw</a></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
-
-        <p>* We do not guarantee the fulfilment of any prizes for contests listed here. </p>
-        <p><sup>†</sup> Contest includes prize, but it is not monetary.</p>
-
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
